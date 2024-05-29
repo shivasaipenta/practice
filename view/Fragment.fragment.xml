@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+<Dialog title="Select an Employee" >
+    <Table id="tableFragment" items="{empModel>/results}"  >
+            <columns>
+                <Column ><Text text="Employee ID"></Text></Column>
+            </columns>
+            <columns>
+                <Column  width="8rem"><Text text="Name"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="8rem"><Text text="Designation"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="8rem"><Text text="Skill"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="8rem"><Text text="Phone"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="15rem" ><Text text="Email"></Text></Column>
+            </columns>
+             <columns>
+                <Column width="8rem" ><Text text="Salary"></Text></Column>
+            </columns>
+             <columns >
+                <Column width="10rem"><Text text="Date of Joining"></Text></Column>
+            </columns>
+            <items>
+            <ColumnListItem  type="Active" press="onPressRowValueHelp">
+                <cells>
+                    
+                    <Text text="{empModel>Empid}"></Text>
+                    <Text text="{empModel>Name}"></Text>
+                    <Text text="{path:'empModel>Desig',formatter:'.f.formatDesig'}"></Text>
+                    <ObjectStatus text="{empModel>Skill}" state="{path:'empModel>Skill',formatter:'.f.formatSkill'}"></ObjectStatus>
+                    <Text text="{empModel>Phone}"></Text>
+                    <Text text="{empModel>Email}"></Text>
+                    <Text text="{path:'empModel>Salary',formatter:'.f.formatCurrency'}"></Text>
+                    <Text text="{path:'empModel>Doj',formatter:'.f.formatDate'}"></Text>
+                </cells>
+            </ColumnListItem>
+            </items>       
+        </Table>   
+<endButton>
+<Button id="btnClose" text="Close" type="Reject" press="btnClose"></Button>
+</endButton>
+
+</Dialog>
+
+</core:FragmentDefinition>

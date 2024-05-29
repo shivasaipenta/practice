@@ -1,0 +1,252 @@
+<mvc:View xmlns:internal="sap.landvisz.internal" controllerName="odataproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+    xmlns:r="sap.ui.layout.form.ResponsiveGridLayout"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m">
+    <Page id="page" >
+    <content>
+        
+        <Panel headerText="Search Employees">
+            <f:SimpleForm editable="true"  layout="ResponsiveLayout" >
+                <f:content>
+                <core:Title text="Filter"></core:Title>
+                <Label text="Employee Id"></Label>
+                <Input id="idEmpid" showValueHelp="true" valueHelpRequest="onValueHelp"></Input>
+                 <Label text="Employee Name"></Label>
+                <Input id="idName"></Input>
+                 <Label text="Designation"></Label>
+                <Input id="idDesig"></Input> 
+                 <Label text="Skill"></Label>
+               <MultiComboBox id="idSkill">
+                    <items>
+                    <core:Item text="SAP FIORI" key="SAP FIORI"></core:Item>                
+                    <core:Item text="SAP FIORI/UI5" key="SAP FIORI/UI5"></core:Item>
+                    <core:Item text="DOT NET" key="DOT NET"></core:Item>
+                    <core:Item text="POWER BI" key="POWER BI"></core:Item>
+                    <core:Item text="JAVA" key="JAVA"></core:Item>
+                    </items>
+               </MultiComboBox>
+                <Label text="Salary"></Label>
+                <Select id="idSal">
+                    <items>
+                        <core:Item text="=" key="EQ"></core:Item>
+                        <core:Item text="&lt;" key="LT"></core:Item>
+                        <core:Item text="&gt;" key="GT"></core:Item>
+                        <core:Item text="&lt;=" key="LE"></core:Item>
+                        <core:Item text="&gt;=" key="GE"></core:Item>
+                    </items>
+                </Select>
+                 <Input id="idSalary"></Input>
+                 <Label text="Date of Joining"></Label>
+                 <DatePicker id="idDoj"></DatePicker>
+
+                 <!-- sorting -->
+                 
+                   <core:Title text="Sort"></core:Title>
+                   <Label text="Sort Field"></Label>
+                   <ComboBox id="idSortCombo" >
+                    <items>
+                        <core:Item text="Employee Id" key="Empid"></core:Item>
+                        <core:Item text="Name" key="Name"></core:Item>
+                        <core:Item text="Designation" key="Desig"></core:Item>
+                           <core:Item text="Skill" key="Skill"></core:Item>
+                            <core:Item text="Salary" key="Salary"></core:Item>
+                         <core:Item text="Date Of Joining" key="Doj"></core:Item>
+                    </items>
+                   </ComboBox>
+                   <Label text="Sort order"></Label>
+                   <RadioButtonGroup columns="2" selectedIndex="-1" id="idSortRadio">
+                   <buttons>
+                    <RadioButton text="Ascending" ></RadioButton>
+                    <RadioButton text="Descending" ></RadioButton>
+                   </buttons>
+                   </RadioButtonGroup>
+
+        <!-- Grouping -->
+        <core:Title text="Group"></core:Title>
+                   <Label text="Group Field"></Label>
+                   <ComboBox id="idGroupCombo" width="200px" >
+                    <items>
+                        <core:Item text="Designation" key="Desig"></core:Item>
+                        <core:Item text="Skill" key="Skill"></core:Item>
+                      
+                    </items>
+                   </ComboBox>
+                   <Label text="Group order"></Label>
+                   <RadioButtonGroup columns="2" selectedIndex="-1" id="idGroupRadio">
+                   <buttons>
+                    <RadioButton text="Ascending" ></RadioButton>
+                    <RadioButton text="Descending" ></RadioButton>
+                   </buttons>
+                   </RadioButtonGroup>
+
+                </f:content>
+            </f:SimpleForm>
+            <FlexBox justifyContent="End">
+                <Button text="Go" type="Accept" icon="sap-icon://accept" class="sapUiTinyMarginEnd" press="onGo"></Button>
+                <Button text="Reset" type="Reject" icon="sap-icon://reset" press="onReset"></Button>
+            </FlexBox>
+            
+        
+        </Panel>
+        
+      
+
+
+              <!-- <f:SimpleForm title="Mutlivalue ui" layout="ResponsiveLayout" editable="true"
+                labelSpanXL="0" emptySpanL="6"  emptySpanM="6" columnsL="3" columnsM="3" >
+
+               <f:content>
+
+                <Label text="I am a selection box"></Label>
+                <Select id="idSel" items="{empModel>/results}" change="onSelction">
+                        <items>
+                                <core:Item text="{empModel>Empid}" key="{empModel>Empid}"></core:Item>
+                        </items>
+                </Select>
+
+                <Label text="I am a Combo box"></Label>
+                <ComboBox id="idCb" items="{empModel>/results}" selectionChange="onComboBox">
+                        <items>
+                            <core:Item text="{empModel>Name}" key="{empModel>Name}"></core:Item>
+                        </items>
+                </ComboBox>
+
+                <Label text="I am a Combo box"></Label>
+                <MultiComboBox id="idMb" items="{empModel>/results}" selectionFinish="onMulticombo">
+                    <items>
+                        <core:Item text="{empModel>Skill}" key="{empModel>Skill}"></core:Item>
+                    </items>
+                </MultiComboBox>
+
+                <Label text="Radio button"></Label>
+                <RadioButtonGroup id="idRb" buttons="{empModel>/results}" columns="5" selectedIndex="-1">
+                    <buttons>
+                        <RadioButton text="{empModel>Skill}" ></RadioButton>
+                    </buttons>
+                </RadioButtonGroup>
+
+                <Button text="submit" press="onSubmit"></Button>
+               </f:content>
+              
+              </f:SimpleForm>
+             -->
+ 
+  <ScrollContainer vertical="true" horizontal="true">
+   <Table id="table01" items="{empModel>/results}" mode="SingleSelectLeft">
+        <headerToolbar>
+            <Toolbar >
+            <Title text="Employee details" ></Title>
+            <ToolbarSpacer ></ToolbarSpacer>
+            <Button text="Create Employee" type="Emphasized" icon="sap-icon://add" press="onPressCreate"></Button>
+            <Button text="Edit Employee" type="Emphasized" icon="sap-icon://edit" press="onPressEdit"></Button>
+     
+            <Button icon="sap-icon://excel-attachment" type="Emphasized" press="onExportToXL"></Button>
+            </Toolbar>
+        </headerToolbar>
+         <columns>
+                <Column ><Text text="S.No"></Text></Column>
+            </columns>
+            <columns>
+                <Column ><Text text="Employee ID"></Text></Column>
+            </columns>
+            <columns>
+                <Column  width="8rem"><Text text="Name"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="8rem"><Text text="Designation"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="8rem"><Text text="Skill"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="8rem"><Text text="Phone"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="15rem" ><Text text="Email"></Text></Column>
+            </columns>
+             <columns>
+                <Column width="8rem" ><Text text="Salary"></Text></Column>
+            </columns>
+             <columns >
+                <Column width="10rem"><Text text="Date of Joining"></Text></Column>
+            </columns>
+            <items>
+            <ColumnListItem  type="Active" press="onPressRow">
+                <cells>
+                    <Text text="{empModel>SNo}"></Text>
+                    <Text text="{empModel>Empid}" ></Text>
+                    <Text text="{empModel>Name}"></Text>
+                    <Text text="{path:'empModel>Desig',formatter:'.f.formatDesig'}"></Text>
+                    <ObjectStatus text="{empModel>Skill}" state="{path:'empModel>Skill',formatter:'.f.formatSkill'}"></ObjectStatus>
+                    <Text text="{empModel>Phone}"></Text>
+                    <Text text="{empModel>Email}"></Text>
+                    <Text text="{path:'empModel>Salary',formatter:'.f.formatCurrency'}"></Text>
+                    <Text text="{path:'empModel>Doj',formatter:'.f.formatDate'}"></Text>
+                </cells>
+            </ColumnListItem>
+            </items>       
+        </Table>   
+    </ScrollContainer>
+
+
+ <!-- <ScrollContainer vertical="true" horizontal="true">
+   <Table id="table02" items="{localData>/JSONEmployees}">
+        <headerToolbar>
+            <Toolbar >
+            <Title text="Employee details" ></Title>
+            <ToolbarSpacer ></ToolbarSpacer>
+            <Button type="Emphasized" press="onPressTableRow"></Button>
+            <Button icon="sap-icon://excel-attachment" type="Emphasized" press="onExportToXL"></Button>
+            </Toolbar>
+        </headerToolbar>
+         <columns>
+                <Column ><Text text="S.No"></Text></Column>
+            </columns>
+            <columns>
+                <Column ><Text text="Employee ID"></Text></Column>
+            </columns>
+            <columns>
+                <Column  width="8rem"><Text text="Name"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="8rem"><Text text="Designation"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="8rem"><Text text="Skill"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="8rem"><Text text="Phone"></Text></Column>
+            </columns>
+            <columns>
+                <Column width="15rem" ><Text text="Email"></Text></Column>
+            </columns>
+             <columns>
+                <Column width="8rem" ><Text text="Salary"></Text></Column>
+            </columns>
+             <columns >
+                <Column width="10rem"><Text text="Date of Joining"></Text></Column>
+            </columns>
+            <items>
+            <ColumnListItem  type="Active" press="onPressRow">
+                <cells>
+                      <Text text="{localData>SNo}"></Text>
+                      <Text text="{localData>Empid}"></Text>
+                   <Text text="{localData>Name}"></Text>
+                    <Text text="{path:'localData>Desig',formatter:'.f.formatDesig'}"></Text>
+                    <ObjectStatus text="{localData>Skill}" state="{path:'localData>Skill',formatter:'.f.formatSkill'}"></ObjectStatus>
+                    <Text text="{localData>Phone}"></Text>
+                    <Text text="{localData>Email}"></Text>
+                    <Text text="{path:'localData>Salary',formatter:'.f.formatCurrency'}"></Text>
+                    <Text text="{path:'localData>Doj',formatter:'.f.formatDate'}"></Text>
+                </cells>
+            </ColumnListItem>
+            </items>       
+        </Table>   
+    </ScrollContainer> -->
+ 
+ </content>
+    </Page>
+
+</mvc:View>
+

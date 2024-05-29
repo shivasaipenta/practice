@@ -1,0 +1,21 @@
+<mvc:View xmlns:internal="sap.landvisz.internal" controllerName="odataproject.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+    xmlns:r="sap.ui.layout.form.ResponsiveGridLayout"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m">
+    <Page id="page2"  showNavButton="true" navButtonPress="onBack">
+    
+   <ObjectHeader
+  responsive="true"
+  fullScreenOptimized="true"
+  title="{Name}">
+  <attributes>
+    <ObjectAttribute title="" text="{Desig}"/>
+    
+  </attributes>
+</ObjectHeader>
+        
+       
+    </Page>
+
+</mvc:View>

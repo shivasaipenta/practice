@@ -1,0 +1,57 @@
+<mvc:View xmlns:internal="sap.landvisz.internal" controllerName="odataproject.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+    xmlns:r="sap.ui.layout.form.ResponsiveGridLayout"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m">
+    <Page id="page3" title="View3" showNavButton="true" navButtonPress="onBack">
+    <content>
+      <f:SimpleForm id="sf2" title="Enter Employee Details" editable="true" layout="ResponsiveLayout" labelSpanL="2" labelSpanM="2"
+      emptySpanL="5" emptySpanM="5"
+      >
+     <f:content>
+            <core:Title text=""></core:Title>
+                <Label text="Employee Id" required="true"></Label>
+                <Input id="idEmpid" value="{createNupdate>/Empid}" ></Input>
+                 <Label text="Employee Name" required="true"></Label>
+                <Input id="idName" value="{createNupdate>/Name}"></Input>
+                 <Label text="Designation" required="true"></Label>
+                <Input id="idDesig" value="{createNupdate>/Desig}"></Input> 
+                 <Label text="Email" required="true"></Label>
+                <Input id="idEmail" value="{createNupdate>/Email}"></Input> 
+                 <Label text="Phone" required="true"></Label>
+                <Input id="idPhone" value="{createNupdate>/Phone}"></Input> 
+                 <Label text="Skill" required="true"></Label>
+               <!-- <MultiComboBox id="idSkill">
+                    <items>
+                    <core:Item text="SAP FIORI" key="SAP FIORI"></core:Item>                
+                    <core:Item text="SAP FIORI/UI5" key="SAP FIORI/UI5"></core:Item>
+                    <core:Item text="DOT NET" key="DOT NET"></core:Item>
+                    <core:Item text="POWER BI" key="POWER BI"></core:Item>
+                    <core:Item text="JAVA" key="JAVA"></core:Item>
+                    </items>
+               </MultiComboBox> -->
+               <Input id="idSkill" value="{createNupdate>/Skill}"></Input>
+                <Label text="Salary" required="true"></Label>
+                 <Input id="idSalary" value="{createNupdate>/Salary}"></Input>
+                 <Label text="Date of Joining" required="true"></Label>
+                 <DatePicker id="idDoj" value="{createNupdate>/Doj}"></DatePicker>
+      <core:Title text=""></core:Title>            
+                </f:content>
+      
+      </f:SimpleForm>
+    
+    </content>
+
+    <footer>
+      <Bar >
+      <contentRight>
+        <Button id="idSave" text="Save" type="Accept" press="onSave"></Button>
+        <Button id="idCancel" text="Cancel" type="Reject" press="onCancel"></Button>
+      </contentRight>
+      </Bar>
+    </footer>
+  
+       
+    </Page>
+
+</mvc:View>

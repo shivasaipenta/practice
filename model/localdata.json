@@ -1,0 +1,37 @@
+{
+    "JSONEmployees" : [
+     {
+        "SNo":"1",
+        "Empid":"1001",
+        "Name":"Mahesh",
+        "Desig":"ASSOCIATE",
+        "Skill":"SAP FIORI",
+        "Phone":944721128,
+        "Email":"mahesh@gmail.com",
+        "Salary":1200000,
+        "Doj":"14-12-2021"
+    },
+    {
+        "SNo":"2",
+        "Empid":"1002",
+        "Name":"Ramakrishna",
+        "Desig":"ASSOCIATE",
+        "Skill":"SAP FIORI/UI5",
+        "Phone":9946375342,
+        "Email":"rama@gmail.com",
+        "Salary":1400000,
+        "Doj":"14-12-2021"
+    },
+    {
+        "SNo":"3",
+        "Empid":"1003",
+        "Name":"ARJUN",
+        "Desig":"ASSOCIATE",
+        "Skill":"JAVA",
+        "Phone":9666002112,
+        "Email":"arjun@gmail.com",
+        "Salary":900000,
+        "Doj":"14-12-2021"
+    }
+]
+}
